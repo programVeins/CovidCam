@@ -80,6 +80,12 @@ class LocationsStorage {
       }
     }
   }
+  
+  func deleteLocationOnDisk(indexx : IndexPath){
+    locations.remove(at: indexx.row)
+    print("Removed at index \(indexx.row)")
+  }
+  
 }
 
 extension Notification.Name {

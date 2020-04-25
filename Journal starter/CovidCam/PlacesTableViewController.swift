@@ -65,4 +65,12 @@ class PlacesTableViewController: UITableViewController {
     return 110
   }
   
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+          LocationsStorage.shared.deleteLocationOnDisk(indexx: indexPath)
+          tableView.deleteRows(at: [indexPath], with: .fade)
+      } else if editingStyle == .insert {
+         
+      }
+  }
 }
